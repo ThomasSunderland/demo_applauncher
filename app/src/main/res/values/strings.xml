@@ -1,0 +1,18 @@
+<resources>
+    <!-- app name -->
+    <string name="app_name">AppLauncherDemo</string>
+    <string name="app_description">App Launcher Demo by Thomas Sunderland (tsunderland77@gmail.com)</string>
+
+    <!-- common strings -->
+    <string name="unknown">Unknown</string>
+
+    <!-- Dashboard -->
+    <string name="dashboard_display_app_launcher">Display App Launcher Dialog</string>
+    <string name="dashboard_title">App Launcher Demo</string>
+
+    <!-- App Launcher -->
+    <string name="dialog_app_launcher_header">App Launcher</string>
+    <string name="dialog_app_launcher_apps_available" formatted="false">Apps Configured: %d</string>
+    <string name="dialog_app_launcher_no_apps_available">Apps Not Installed / Configured</string>
+    <string name="service_description_app_launcher_file_monitor" translatable="false">App Launcher File Monitor</string>
+</resources>

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- Dashboard -->
+    <dimen name="dashboard_display_dialog_icon_size">128dp</dimen>
+    <dimen name="dashboard_display_dialog_margin_bottom">16dp</dimen>
+    <dimen name="dashboard_display_dialog_text_size">18sp</dimen>
+
+    <!-- App Launcher -->
+    <dimen name="app_launcher_dialog_min_width">480dp</dimen>
+    <dimen name="app_launcher_dialog_min_height">320dp</dimen>
+    <dimen name="app_launcher_dialog_padding">12dp</dimen>
+    <dimen name="app_launcher_dialog_header_height">60dp</dimen>
+    <dimen name="app_launcher_dialog_header_card_corner_radius">8dp</dimen>
+    <dimen name="app_launcher_dialog_header_card_elevation">2dp</dimen>
+    <dimen name="app_launcher_dialog_header_card_padding">4dp</dimen>
+    <dimen name="app_launcher_dialog_header_icon_size">48dp</dimen>
+    <dimen name="app_launcher_dialog_header_icon_margin_end">8dp</dimen>
+    <dimen name="app_launcher_dialog_header_text_size">18sp</dimen>
+    <dimen name="app_launcher_dialog_background_image_size">128dp</dimen>
+    <dimen name="app_launcher_dialog_background_text_size">18sp</dimen>
+    <dimen name="app_launcher_dialog_app_container_margin_top">64dp</dimen>
+    <dimen name="app_launcher_dialog_app_container_margin_bottom">20dp</dimen>
+    <dimen name="app_launcher_dialog_app_card_size">120dp</dimen>
+    <dimen name="app_launcher_dialog_app_card_margin">4dp</dimen>
+    <dimen name="app_launcher_dialog_app_card_corner_radius">8dp</dimen>
+    <dimen name="app_launcher_dialog_app_card_elevation">4dp</dimen>
+    <dimen name="app_launcher_dialog_app_card_padding">12dp</dimen>
+    <dimen name="app_launcher_dialog_app_icon_size">48dp</dimen>
+    <dimen name="app_launcher_dialog_app_icon_margin_bottom">4dp</dimen>
+    <dimen name="app_launcher_dialog_app_label_text_size">14sp</dimen>
+    <dimen name="app_launcher_dialog_footer_text_size">12sp</dimen>
+</resources>

@@ -1,0 +1,44 @@
+/**
+ * Copyright. Baby Bill's Software Factory.
+ */
+buildscript {
+    // dependency versioning info
+    ext {
+        // kotlin version
+        kotlin_version = '1.3.31'
+    }
+
+    repositories {
+        // google's maven repository
+        google()
+
+        // https://bintray.com/bintray/jcenter
+        jcenter()
+    }
+
+    dependencies {
+        // gradle plugin
+        // ref: https://developer.android.com/studio/build/
+        classpath 'com.android.tools.build:gradle:3.4.1'
+
+        // kotlin gradle plugin
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
+
+        // navigation architecture component - safe args
+        classpath "androidx.navigation:navigation-safe-args-gradle-plugin:2.1.0-alpha04"
+    }
+}
+
+allprojects {
+    repositories {
+        // google's maven repository
+        google()
+
+        // https://bintray.com/bintray/jcenter
+        jcenter()
+    }
+}
+
+task clean(type: Delete) {
+    delete rootProject.buildDir
+}

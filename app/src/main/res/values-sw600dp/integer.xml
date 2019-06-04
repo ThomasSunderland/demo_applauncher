@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- app launcher columns -->
+    <integer name="dialog_app_launcher_grid_columns">4</integer>
+</resources>

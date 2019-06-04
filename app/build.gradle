@@ -1,0 +1,135 @@
+/**
+ * Copyright. Baby Bill's Software Factory.
+ */
+apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+apply plugin: 'androidx.navigation.safeargs.kotlin'
+
+android {
+    // compile SDK version = Android P
+    compileSdkVersion 28
+
+    defaultConfig {
+        applicationId "com.babybillssoftwarefactory.applauncherdemo"
+
+        // minimum = Android Lollipop
+        minSdkVersion 21
+
+        // target = Android Pie
+        targetSdkVersion 28
+
+        // note: increment on each release
+        versionCode 1
+        versionName "1.0.0"
+
+        // test runner
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    dataBinding {
+        enabled = true
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    sourceSets {
+        // instrumentation (Android / UI, requires physical or virtual device) tests
+        androidTest.java.srcDirs += 'src/androidTest/kotlin'
+
+        // main source
+        main.java.srcDirs += 'src/main/kotlin'
+
+        // unit (no Android dependencies, can be run locally) tests
+        test.java.srcDirs += 'src/test/kotlin'
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+dependencies {
+    /*
+        jar file dependencies
+    */
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+
+    /*
+        Android Architecture Components - Navigation
+        Ref: https://developer.android.com/topic/libraries/architecture/navigation/
+    */
+    implementation 'androidx.navigation:navigation-fragment-ktx:2.1.0-alpha04'
+    implementation 'androidx.navigation:navigation-ui-ktx:2.1.0-alpha04'
+
+    /*
+        Android Architecture Components - Lifecycle, ViewModel
+        Ref: https://developer.android.com/topic/libraries/architecture/viewmodel
+    */
+    implementation 'androidx.lifecycle:lifecycle-extensions:2.2.0-alpha01'
+    implementation 'androidx.lifecycle:lifecycle-viewmodel-ktx:2.2.0-alpha01'
+
+    /*
+        EventBus
+        Ref: https://github.com/greenrobot/EventBus
+    */
+    implementation 'org.greenrobot:eventbus:3.1.1'
+
+    /*
+        Google app compatibility library
+        Ref: https://developer.android.com/tools/support-library/features.html#v7
+    */
+    implementation 'androidx.appcompat:appcompat:1.1.0-alpha05'
+
+    /*
+        Google support libraries
+    */
+    implementation 'androidx.core:core:1.2.0-alpha01'
+    implementation 'androidx.annotation:annotation:1.0.2'
+    implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
+    implementation 'androidx.fragment:fragment:1.1.0-alpha09'
+    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
+    implementation 'com.google.android.material:material:1.0.0'
+    implementation 'androidx.recyclerview:recyclerview:1.1.0-alpha05'
+
+    /*
+        Gson (library for serializing / deserializing JSON)
+        Ref: https://code.google.com/p/google-gson/
+    */
+    implementation "com.google.code.gson:gson:2.8.5"
+
+    /*
+        Kotlin
+    */
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+
+    /*
+        Kotlin Extensions
+    */
+    implementation 'androidx.core:core-ktx:1.2.0-alpha01'
+
+    /*
+        Picasso (Image Loading)
+        Ref: https://square.github.io/picasso/
+    */
+    implementation 'com.squareup.picasso:picasso:2.71828'
+
+    /*
+        Unit Testing
+        Note: can be run locally (no device needed)
+    */
+    testImplementation 'junit:junit:4.12'
+
+    /*
+        UI / Android Testing
+        Note: requires a device (physical or virtual)
+    */
+    androidTestImplementation 'androidx.test:runner:1.2.0'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
+}

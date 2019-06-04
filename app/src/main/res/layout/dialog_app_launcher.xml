@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".dialogs.AppLauncherDialog">
+
+    <!-- data binding -->
+    <data>
+
+        <import type="android.view.View" />
+        <import type="java.util.List"/>
+
+        <variable
+            name="viewmodel"
+            type="com.babybillssoftwarefactory.applauncherdemo.viewmodel.AppLauncherViewModel" />
+    </data>
+
+    <FrameLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:background="@android:color/white"
+        android:minWidth="@dimen/app_launcher_dialog_min_width"
+        android:minHeight="@dimen/app_launcher_dialog_min_height"
+        android:padding="@dimen/app_launcher_dialog_padding">
+
+        <!-- header -->
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/app_launcher_dialog_header_height"
+            android:layout_gravity="top|center_horizontal"
+            app:cardBackgroundColor="@color/colorPrimary"
+            app:cardCornerRadius="@dimen/app_launcher_dialog_header_card_corner_radius"
+            app:cardElevation="@dimen/app_launcher_dialog_header_card_elevation"
+            app:cardUseCompatPadding="true"
+            app:contentPadding="@dimen/app_launcher_dialog_header_card_padding">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="top">
+
+                <!-- icon -->
+                <ImageView
+                    android:layout_width="@dimen/app_launcher_dialog_header_icon_size"
+                    android:layout_height="@dimen/app_launcher_dialog_header_icon_size"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginEnd="@dimen/app_launcher_dialog_header_icon_margin_end"
+                    android:contentDescription="@string/unknown"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/rocket_launch" />
+
+                <!-- text -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="@string/dialog_app_launcher_header"
+                    android:textAlignment="center"
+                    android:textColor="@android:color/white"
+                    android:textSize="@dimen/app_launcher_dialog_header_text_size"
+                    android:textStyle="bold"
+                    tools:text="Blah Blah Blah" />
+
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <!-- launcher background (displayed when no apps are configured) -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:visibility="@{safeUnbox(viewmodel.appLauncherApps.size()) > 0 ? View.GONE : View.VISIBLE}">
+
+            <!-- image -->
+            <ImageView
+                android:layout_width="@dimen/app_launcher_dialog_background_image_size"
+                android:layout_height="@dimen/app_launcher_dialog_background_image_size"
+                android:layout_gravity="center"
+                android:contentDescription="@string/unknown"
+                android:scaleType="fitCenter"
+                android:src="@drawable/rocket_launch" />
+
+            <!-- text -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="@string/dialog_app_launcher_no_apps_available"
+                android:textAlignment="center"
+                android:textSize="@dimen/app_launcher_dialog_background_text_size"
+                tools:text="Blah Blah Blah" />
+        </LinearLayout>
+
+        <!-- collection of apps that can be launched -->
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/app_container"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="top|center_horizontal"
+            android:layout_marginTop="@dimen/app_launcher_dialog_app_container_margin_top"
+            android:layout_marginBottom="@dimen/app_launcher_dialog_app_container_margin_bottom"
+            android:background="@android:color/transparent"/>
+
+        <!-- label at the bottom of the dialog showing how many apps are configured -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom|center_horizontal"
+            android:alpha="0.35"
+            android:text="@{viewmodel.appLauncherLabel}"
+            android:textAlignment="center"
+            android:textSize="@dimen/app_launcher_dialog_footer_text_size"
+            tools:text="Apps Configured: 1" />
+    </FrameLayout>
+</layout>

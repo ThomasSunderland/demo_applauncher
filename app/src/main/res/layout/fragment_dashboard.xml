@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        tools:context=".view.fragments.DashboardFragment">
+
+    <!-- data binding -->
+    <data>
+
+        <variable
+                name="viewmodel"
+                type="com.babybillssoftwarefactory.applauncherdemo.viewmodel.DashboardViewModel"/>
+    </data>
+
+    <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:onClick="@{() -> viewmodel.handleActionShowAppLauncher()}"
+            android:clickable="true"
+            android:focusable="true">
+
+        <!-- Used to display the App Launcher dialog -->
+        <ImageView
+                android:id="@+id/dashboard_icon"
+                android:layout_width="@dimen/dashboard_display_dialog_icon_size"
+                android:layout_height="@dimen/dashboard_display_dialog_icon_size"
+                android:layout_centerInParent="true"
+                android:contentDescription="@string/unknown"
+                android:scaleType="fitCenter"
+                android:layout_marginBottom="@dimen/dashboard_display_dialog_margin_bottom"
+                android:src="@drawable/rocket_launch"/>
+
+        <!-- Description of the Launcher -->
+        <TextView
+                android:id="@+id/dashboard_label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/dashboard_icon"
+                android:focusable="false"
+                android:layout_centerHorizontal="true"
+                android:textAlignment="center"
+                android:textSize="@dimen/dashboard_display_dialog_text_size"
+                android:textColor="@android:color/darker_gray"
+                android:textStyle="bold"
+                android:text="@string/dashboard_display_app_launcher"
+                tools:text="Click to display App Launcher dialog"/>
+    </RelativeLayout>
+</layout>

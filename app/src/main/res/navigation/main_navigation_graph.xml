@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            xmlns:tools="http://schemas.android.com/tools"
+            app:startDestination="@id/action_dashboard">
+
+    <!-- action -> dashboard -->
+    <fragment
+            android:id="@+id/action_dashboard"
+            android:name="com.babybillssoftwarefactory.applauncherdemo.view.fragments.DashboardFragment"
+            tools:layout="@layout/fragment_dashboard">
+
+        <!-- dashboard -> app launcher -->
+        <action
+                android:id="@+id/action_dashboard_to_app_launcher"
+                app:destination="@id/action_app_launcher" />
+    </fragment>
+
+
+    <!-- action -> app launcher dialog -->
+    <dialog
+            android:id="@+id/action_app_launcher"
+            android:name="com.babybillssoftwarefactory.applauncherdemo.view.dialogs.AppLauncherDialog"
+            tools:layout="@layout/dialog_app_launcher" />
+</navigation>
