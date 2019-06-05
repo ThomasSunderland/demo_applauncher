@@ -1,0 +1,13 @@
+{
+    "Apps": [
+        "com.google.android.apps.maps",
+        "com.google.android.apps.photos",
+        "com.samsung.android.contacts",
+        "com.linkedin.android",
+        "com.audible.application",
+        "com.dna.solitaireapp",
+        "com.sec.android.app.popupcalculator",
+        "com.google.android.apps.docs"
+    ],
+    "FloatApps": false
+}
